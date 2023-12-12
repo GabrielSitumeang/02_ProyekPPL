@@ -214,5 +214,7 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
     Route::get('/reviewpembeli', [BerandaPembeliController::class, 'review'])->name('review.pembeli');
     Route::post('kirim-emal', [BerandaPembeliController::class, 'kirimemail'])->name('kirim.email');
     Auth::routes();
+    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
     Route::get('logout', [LoginController::class, 'logout']);
 }); //prevent-back-history

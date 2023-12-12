@@ -91,9 +91,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            {{ __('Login') }}
-                                        </button>
+                                        <!-- Login.blade.php -->
+                                <button id="loginButton" type="submit" class="btn btn-primary btn-user btn-block">
+                                    {{ __('Login') }}
+                                </button>
+
                                     </form>
                                     <hr>
                                     <div class="text-center">
