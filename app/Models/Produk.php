@@ -5,11 +5,17 @@ namespace App\Models;
 use App\Traits\HasFormatRupiah;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 //<<<<<<< HEAD
 use App\Models\Stok;
 //=======
 use Illuminate\Database\Eloquent\SoftDeletes;
 //>>>>>>> f85421aa8fd3710cb439049f8c3f75d8615af685
+=======
+use App\Models\Stok;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+>>>>>>> e82adcb86218277c5e4e388ba1cfebeb84d31599
 
 class Produk extends Model
 {
