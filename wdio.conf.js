@@ -30,7 +30,9 @@ exports.config = {
         // './test/specs/**/laporanSusuEdit.js'
         // './test/specs/**/laporanSusuDelete.js'
 
-        './test/specs/TestUI/Pembeli/PembelianProduk.js'
+        // './test/specs/TestUI/Pembeli/PembelianProduk.js'
+
+        "./test/specs/**/*.js"
     ],
     // Patterns to exclude.
     exclude: [
@@ -133,6 +135,12 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec', ['allure', { outputDir: 'allure-results' }]],
+
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
