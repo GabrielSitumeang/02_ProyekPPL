@@ -4,7 +4,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 9.52.9.
+ * Generated for Laravel 9.52.16.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1252,7 +1252,7 @@
          * Call the given Closure / class@method and inject its dependencies.
          *
          * @param callable|string $callback
-         * @param \Illuminate\Container\array<string,  mixed>  $parameters
+         * @param array<string, mixed> $parameters
          * @param string|null $defaultMethod
          * @return mixed 
          * @throws \InvalidArgumentException
@@ -4652,102 +4652,6 @@
         public static function flushMacros()
         {
                         \Illuminate\Cookie\CookieJar::flushMacros();
-        }
-         
-    }
-            /**
-     * 
-     *
-     * @see \Illuminate\Encryption\Encrypter
-     */ 
-        class Crypt {
-                    /**
-         * Determine if the given key and cipher combination is valid.
-         *
-         * @param string $key
-         * @param string $cipher
-         * @return bool 
-         * @static 
-         */ 
-        public static function supported($key, $cipher)
-        {
-                        return \Illuminate\Encryption\Encrypter::supported($key, $cipher);
-        }
-                    /**
-         * Create a new encryption key for the given cipher.
-         *
-         * @param string $cipher
-         * @return string 
-         * @static 
-         */ 
-        public static function generateKey($cipher)
-        {
-                        return \Illuminate\Encryption\Encrypter::generateKey($cipher);
-        }
-                    /**
-         * Encrypt the given value.
-         *
-         * @param mixed $value
-         * @param bool $serialize
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encrypt($value, $serialize = true)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->encrypt($value, $serialize);
-        }
-                    /**
-         * Encrypt a string without serialization.
-         *
-         * @param string $value
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encryptString($value)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->encryptString($value);
-        }
-                    /**
-         * Decrypt the given value.
-         *
-         * @param string $payload
-         * @param bool $unserialize
-         * @return mixed 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decrypt($payload, $unserialize = true)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->decrypt($payload, $unserialize);
-        }
-                    /**
-         * Decrypt the given string without unserialization.
-         *
-         * @param string $payload
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decryptString($payload)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->decryptString($payload);
-        }
-                    /**
-         * Get the encryption key that the encrypter is currently using.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getKey()
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->getKey();
         }
          
     }
@@ -11684,6 +11588,7 @@
                     /**
          * Gets the decoded form or json request body.
          *
+         * @throws JsonException When the body cannot be decoded to an array
          * @static 
          */ 
         public static function getPayload()
@@ -18256,7 +18161,7 @@
                     /**
          * Add metadata info
          *
-         * @param \Barryvdh\DomPDF\array<string,  string> $info
+         * @param array<string, string> $info
          * @return static 
          * @static 
          */ 
@@ -18268,8 +18173,8 @@
                     /**
          * Load a View and convert to HTML
          *
-         * @param \Barryvdh\DomPDF\array<string,  mixed> $data
-         * @param \Barryvdh\DomPDF\array<string,  mixed> $mergeData
+         * @param array<string, mixed> $data
+         * @param array<string, mixed> $mergeData
          * @param string|null $encoding Not used yet
          * @static 
          */ 
@@ -18281,7 +18186,7 @@
                     /**
          * Set/Change an option (or array of options) in Dompdf
          *
-         * @param \Barryvdh\DomPDF\array<string,  mixed>|string $attribute
+         * @param array<string, mixed>|string $attribute
          * @param null|mixed $value
          * @return \Barryvdh\DomPDF\PDF 
          * @static 
@@ -18295,7 +18200,7 @@
          * Replace all the Options from DomPDF
          *
          * @deprecated Use setOption to override individual options.
-         * @param \Barryvdh\DomPDF\array<string,  mixed> $options
+         * @param array<string, mixed> $options
          * @static 
          */ 
         public static function setOptions($options)
@@ -18311,7 +18216,7 @@
          * 'compress' = > 1 or 0 - apply content stream compression, this is
          *    on (1) by default
          *
-         * @param \Barryvdh\DomPDF\array<string,  int> $options
+         * @param array<string, int> $options
          * @return string The rendered PDF as string
          * @static 
          */ 
@@ -18428,7 +18333,7 @@
                     /**
          * Add metadata info
          *
-         * @param \Barryvdh\DomPDF\array<string,  string> $info
+         * @param array<string, string> $info
          * @return static 
          * @static 
          */ 
@@ -18440,8 +18345,8 @@
                     /**
          * Load a View and convert to HTML
          *
-         * @param \Barryvdh\DomPDF\array<string,  mixed> $data
-         * @param \Barryvdh\DomPDF\array<string,  mixed> $mergeData
+         * @param array<string, mixed> $data
+         * @param array<string, mixed> $mergeData
          * @param string|null $encoding Not used yet
          * @static 
          */ 
@@ -18453,7 +18358,7 @@
                     /**
          * Set/Change an option (or array of options) in Dompdf
          *
-         * @param \Barryvdh\DomPDF\array<string,  mixed>|string $attribute
+         * @param array<string, mixed>|string $attribute
          * @param null|mixed $value
          * @return \Barryvdh\DomPDF\PDF 
          * @static 
@@ -18467,7 +18372,7 @@
          * Replace all the Options from DomPDF
          *
          * @deprecated Use setOption to override individual options.
-         * @param \Barryvdh\DomPDF\array<string,  mixed> $options
+         * @param array<string, mixed> $options
          * @static 
          */ 
         public static function setOptions($options)
@@ -18483,7 +18388,7 @@
          * 'compress' = > 1 or 0 - apply content stream compression, this is
          *    on (1) by default
          *
-         * @param \Barryvdh\DomPDF\array<string,  int> $options
+         * @param array<string, int> $options
          * @return string The rendered PDF as string
          * @static 
          */ 
@@ -19942,6 +19847,27 @@
                     /**
          * 
          *
+         * @param array<class-string<ArgumentReducer>|ArgumentReducer>|\Spatie\Backtrace\Arguments\ArgumentReducers|null $argumentReducers
+         * @static 
+         */ 
+        public static function argumentReducers($argumentReducers)
+        {
+                        /** @var \Spatie\FlareClient\Flare $instance */
+                        return $instance->argumentReducers($argumentReducers);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function withStackFrameArguments($withStackFrameArguments = true)
+        {
+                        /** @var \Spatie\FlareClient\Flare $instance */
+                        return $instance->withStackFrameArguments($withStackFrameArguments);
+        }
+                    /**
+         * 
+         *
          * @static 
          */ 
         public static function version()
@@ -20038,7 +19964,7 @@
          *
          * @param string $name
          * @param string $messageLevel
-         * @param \Spatie\FlareClient\array<int,  mixed> $metaData
+         * @param array<int, mixed> $metaData
          * @return \Spatie\FlareClient\Flare 
          * @static 
          */ 
@@ -20131,7 +20057,7 @@
                     /**
          * 
          *
-         * @param \Spatie\FlareClient\array<int,  string> $fieldNames
+         * @param array<int, string> $fieldNames
          * @return \Spatie\FlareClient\Flare 
          * @static 
          */ 
@@ -20207,7 +20133,7 @@
          * 
          *
          * @param string $groupName
-         * @param \Spatie\FlareClient\array<string,  mixed> $properties
+         * @param array<string, mixed> $properties
          * @return \Spatie\FlareClient\Flare 
          * @static 
          */ 
@@ -20355,7 +20281,6 @@ namespace  {
             class Cache extends \Illuminate\Support\Facades\Cache {}
             class Config extends \Illuminate\Support\Facades\Config {}
             class Cookie extends \Illuminate\Support\Facades\Cookie {}
-            class Crypt extends \Illuminate\Support\Facades\Crypt {}
             class Date extends \Illuminate\Support\Facades\Date {}
             class DB extends \Illuminate\Support\Facades\DB {}
             class Eloquent extends \Illuminate\Database\Eloquent\Model {             
@@ -23857,8 +23782,8 @@ namespace  {
                 /**
              * Increment the given column's values by the given amounts.
              *
-             * @param \Illuminate\Database\Query\array<string,  float|int|numeric-string>  $columns
-             * @param \Illuminate\Database\Query\array<string,  mixed>  $extra
+             * @param array<string, float|int|numeric-string> $columns
+             * @param array<string, mixed> $extra
              * @return int 
              * @throws \InvalidArgumentException
              * @static 
@@ -23872,8 +23797,8 @@ namespace  {
                 /**
              * Decrement the given column's values by the given amounts.
              *
-             * @param \Illuminate\Database\Query\array<string,  float|int|numeric-string>  $columns
-             * @param \Illuminate\Database\Query\array<string,  mixed>  $extra
+             * @param array<string, float|int|numeric-string> $columns
+             * @param array<string, mixed> $extra
              * @return int 
              * @throws \InvalidArgumentException
              * @static 
